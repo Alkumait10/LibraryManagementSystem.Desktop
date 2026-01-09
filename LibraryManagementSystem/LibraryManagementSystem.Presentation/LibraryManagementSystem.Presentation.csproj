@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddEditBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEditBook.Designer.cs">
+      <DependentUpon>frmAddEditBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBookDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBookDetails.Designer.cs">
+      <DependentUpon>frmBookDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListBooks.Designer.cs">
+      <DependentUpon>frmListBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\frmAddEditUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +84,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAddEditBook.resx">
+      <DependentUpon>frmAddEditBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBookDetails.resx">
+      <DependentUpon>frmBookDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListBooks.resx">
+      <DependentUpon>frmListBooks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Users\frmAddEditUser.resx">
       <DependentUpon>frmAddEditUser.cs</DependentUpon>
     </EmbeddedResource>
