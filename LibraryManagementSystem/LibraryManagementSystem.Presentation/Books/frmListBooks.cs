@@ -177,5 +177,24 @@ namespace LibraryManagementSystem.Presentation
 
             lblRecordsCount.Text = _AllBooks.Rows.Count.ToString();
         }
+
+        private void addCopyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvBooks.CurrentRow == null)
+                return;
+
+            int BookID = (int)dgvBooks.CurrentRow.Cells["BookID"].Value;
+
+            if (clsBookCopy.AddNewCopy(BookID))
+            {
+                MessageBox.Show("Book copy added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Failed to add book copy.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
