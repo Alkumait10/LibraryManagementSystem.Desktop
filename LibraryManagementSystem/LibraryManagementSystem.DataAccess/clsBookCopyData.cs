@@ -78,7 +78,7 @@ namespace LibraryManagementSystem.DataAccess
             return isFound;
         }
 
-        public static int AddNewBookCopy(int BookID, bool AvailabilityStatus)
+        public static int AddNewBookCopy(int BookID)
         {
             int CopyID = -1;
 
@@ -86,13 +86,12 @@ namespace LibraryManagementSystem.DataAccess
             {
 
                 string query = @"INSERT INTO BookCopies (BookID,AvailabilityStatus)
-                                VALUES(@BookID,@AvailabilityStatus);
+                                VALUES(@BookID,1);
                                 SELECT SCOPE_IDENTITY();";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@BookID", BookID);
-                    command.Parameters.AddWithValue("@AvailabilityStatus", AvailabilityStatus);
 
                     try
                     {
@@ -230,38 +229,5 @@ namespace LibraryManagementSystem.DataAccess
             }
         }
 
-        public static bool AddNewCopy(int bookID)
-        {
-            int rowsAffected = 0;
-
-            string query = @"Insert into BookCopies (BookID, AvailabilityStatus)
-                             Values (@BookID, 1);";
-
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-            {
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@BookID", bookID);
-
-                    try
-                    {
-                        connection.Open();
-
-
-                        rowsAffected = command.ExecuteNonQuery();
-                    }
-                    catch(Exception)
-                    {
-                        rowsAffected = 0;
-                    }
-                    finally
-                    {
-                        connection.Close();
-                    }
-
-                    return (rowsAffected > 0);
-                }
-            }
-        }
     }
 }

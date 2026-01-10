@@ -6,8 +6,8 @@ namespace LibraryManagementSystem.BusinessLogic
 {
     public class clsBookCopy
     {
-        public enum enMode { AddNew = 0, Update = 1 };
-        public enMode Mode = enMode.AddNew;
+        public enum enMode { Update = 1 };
+        public enMode Mode = enMode.Update;
 
         public int CopyID { get; set; }
 
@@ -23,7 +23,6 @@ namespace LibraryManagementSystem.BusinessLogic
             this.BookID = -1;
             this.AvailabilityStatus = false;
 
-            Mode = enMode.AddNew;
         }
 
         private clsBookCopy(int CopyID, int BookID, bool AvailabilityStatus)
@@ -36,13 +35,6 @@ namespace LibraryManagementSystem.BusinessLogic
             this.AvailabilityStatus = AvailabilityStatus;
 
             Mode = enMode.Update;
-        }
-
-        private bool _AddNewBookCopy()
-        {
-            this.CopyID = clsBookCopyData.AddNewBookCopy(this.BookID, this.AvailabilityStatus);
-
-            return (this.CopyID != -1);
         }
 
         private bool _UpdateBookCopyStatus()
@@ -72,17 +64,6 @@ namespace LibraryManagementSystem.BusinessLogic
         {
             switch (Mode)
             {
-                case enMode.AddNew:
-                    if (_AddNewBookCopy())
-                    {
-                        Mode = enMode.Update;
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-
                 case enMode.Update:
                     return _UpdateBookCopyStatus();
 
@@ -106,7 +87,7 @@ namespace LibraryManagementSystem.BusinessLogic
             if (!clsBook.IsBookExist(BookID))
                 return false;
 
-            return clsBookCopyData.AddNewCopy(BookID);
+            return (clsBookCopyData.AddNewBookCopy(BookID) != -1);
         }
     }
 }
