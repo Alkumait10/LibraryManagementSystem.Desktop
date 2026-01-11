@@ -12,11 +12,13 @@ It focuses on clean separation between presentation, business logic, and data ac
 ---
 
 ## ✨ Key Features
-- Manage books and categories
-- Register and manage library members
-- Borrow and return tracking
-- Basic validation and business rules
-- Clean layered architecture
+- Users Management (CRUD)
+- Books & Book Copies Management
+- Borrowing & Returning Books
+- Fine calculation for late returns
+- Reservations for unavailable copies
+- Application Settings (Borrowing period, Fine per day)
+- Simple Admin Login System
 
 ---
 
@@ -44,6 +46,12 @@ The project follows a **3-Tier Architecture**:
 - Improve validation and error handling
 - Add reporting features
 - Connect external clients via API
+
+---
+
+## Note
+⚠️ The system is functionally complete.
+Minor UI/UX improvements and visual enhancements will be added in future updates.
 
 ---
 
