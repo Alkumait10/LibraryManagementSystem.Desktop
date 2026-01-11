@@ -54,6 +54,7 @@
             // 
             // cbStatus
             // 
+            this.cbStatus.AutoCheck = false;
             this.cbStatus.AutoSize = true;
             this.cbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cbStatus.Location = new System.Drawing.Point(45, 375);

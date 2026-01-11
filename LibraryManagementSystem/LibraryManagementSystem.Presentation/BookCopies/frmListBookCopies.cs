@@ -14,9 +14,18 @@ namespace LibraryManagementSystem.Presentation
     public partial class frmListBookCopies : Form
     {
         private static DataTable _AllBookCopies;
+        private int _UserID;
+
         public frmListBookCopies()
         {
             InitializeComponent();
+        }
+
+        public frmListBookCopies(int UserID)
+        {
+            InitializeComponent();
+
+            _UserID = UserID;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -28,6 +37,8 @@ namespace LibraryManagementSystem.Presentation
         {
             _AllBookCopies = clsBookCopy.GetAllBookCopies();
             dgvBookCopies.DataSource = _AllBookCopies;
+
+            cbFilterBy.SelectedIndex = 0;
 
             _ConfigureBookCopiesGrid();
 
@@ -163,6 +174,58 @@ namespace LibraryManagementSystem.Presentation
             frm.ShowDialog();
 
             frmListBookCopies_Load(null, null);
+        }
+
+        private void borrowThisBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int CopyID = (int)dgvBookCopies.CurrentRow.Cells[0].Value;
+
+            if (MessageBox.Show("Are you sure you want to borrow this copy?", "Confirm Borrowing", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+
+                if (clsBorrowingRecord.BorrowBook(_UserID, CopyID))
+                {
+                    MessageBox.Show("Copy has been borrowed successfully", "Borrowed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    frmListBookCopies_Load(null, null);
+                }
+                else
+                    MessageBox.Show("Copy is not borrowed.", "Faild", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            int rowIndex = dgvBookCopies.CurrentCell.RowIndex;
+
+            bool isChecked = (bool)dgvBookCopies.Rows[rowIndex].Cells["AvailabilityStatus"].Value;
+
+            borrowThisBookToolStripMenuItem.Enabled = isChecked;
+
+            reserveThisCopyToolStripMenuItem.Enabled = !isChecked;
+        }
+
+        private void reserveThisCopyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int CopyID = (int)dgvBookCopies.CurrentRow.Cells[0].Value;
+
+            if (MessageBox.Show("This copy is currently unavailable.\nDo you want to reserve it?", "Confirm Reservation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) 
+            {
+                return;
+            }
+
+            bool reserved = clsReservation.AddNewReservation(_UserID, CopyID);
+
+            if (reserved)
+            {
+                MessageBox.Show("Copy reserved successfully.\nYou will be notified when it becomes available.", "Reservation Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                frmListBookCopies_Load(null, null);
+            }
+            else
+            {
+                MessageBox.Show("This copy is already reserved by another user.", "Reservation Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

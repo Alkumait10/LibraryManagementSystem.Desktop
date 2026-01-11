@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtpPublicationDate = new System.Windows.Forms.DateTimePicker();
             this.txtAdditionalDetails = new System.Windows.Forms.TextBox();
             this.txtGenre = new System.Windows.Forms.TextBox();
             this.lblAdditionalDetails = new System.Windows.Forms.Label();
@@ -40,14 +39,8 @@
             this.lblISBN = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblBookID = new System.Windows.Forms.Label();
+            this.txtPublicationDate = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // dtpPublicationDate
-            // 
-            this.dtpPublicationDate.Location = new System.Drawing.Point(232, 145);
-            this.dtpPublicationDate.Name = "dtpPublicationDate";
-            this.dtpPublicationDate.Size = new System.Drawing.Size(196, 22);
-            this.dtpPublicationDate.TabIndex = 41;
             // 
             // txtAdditionalDetails
             // 
@@ -149,11 +142,19 @@
             this.lblBookID.TabIndex = 30;
             this.lblBookID.Text = "BookID:";
             // 
+            // txtPublicationDate
+            // 
+            this.txtPublicationDate.Location = new System.Drawing.Point(232, 145);
+            this.txtPublicationDate.Name = "txtPublicationDate";
+            this.txtPublicationDate.ReadOnly = true;
+            this.txtPublicationDate.Size = new System.Drawing.Size(196, 22);
+            this.txtPublicationDate.TabIndex = 42;
+            // 
             // ctrlBookDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dtpPublicationDate);
+            this.Controls.Add(this.txtPublicationDate);
             this.Controls.Add(this.txtAdditionalDetails);
             this.Controls.Add(this.txtGenre);
             this.Controls.Add(this.lblAdditionalDetails);
@@ -173,8 +174,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker dtpPublicationDate;
         private System.Windows.Forms.TextBox txtAdditionalDetails;
         private System.Windows.Forms.TextBox txtGenre;
         private System.Windows.Forms.Label lblAdditionalDetails;
@@ -186,5 +185,6 @@
         private System.Windows.Forms.Label lblISBN;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblBookID;
+        private System.Windows.Forms.TextBox txtPublicationDate;
     }
 }

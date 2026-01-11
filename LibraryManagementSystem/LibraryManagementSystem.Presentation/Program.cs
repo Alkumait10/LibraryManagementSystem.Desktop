@@ -16,9 +16,7 @@ namespace LibraryManagementSystem.Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmListUsers());
-            //Application.Run(new frmListBooks());
-            Application.Run(new frmListBookCopies());
+            Application.Run(new frmLogin());
         }
     }
 }

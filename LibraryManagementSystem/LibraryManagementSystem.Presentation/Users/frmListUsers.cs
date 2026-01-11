@@ -26,6 +26,8 @@ namespace LibraryManagementSystem.Presentation
             _AllUsers = clsUser.GetAllUsers();
             dgvUsers.DataSource = _AllUsers;
 
+            cbFilterBy.SelectedIndex = 0;
+
             _ConfigureUsersGrid();
 
 
@@ -171,6 +173,46 @@ namespace LibraryManagementSystem.Presentation
                 _AllUsers.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, txtFilterValue.Text.Trim());
 
             lblRecordsCount.Text = _AllUsers.Rows.Count.ToString();
+        }
+
+        private void borrowBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
+
+            frmListBookCopies frm = new frmListBookCopies(UserID);
+            frm.ShowDialog();
+
+            frmListUsers_Load(null, null);
+        }
+
+        private void showFinesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
+
+            frmListFines frm = new frmListFines(UserID);
+            frm.ShowDialog();
+
+            frmListUsers_Load(null, null);
+        }
+
+        private void showBorrowingRecordsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
+
+            frmListBorrowingRecords frm = new frmListBorrowingRecords(UserID);
+            frm.ShowDialog();
+
+            frmListUsers_Load(null, null);
+        }
+
+        private void showReservationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
+
+            frmListReservations frm = new frmListReservations(UserID);
+            frm.ShowDialog();
+
+            frmListUsers_Load(null, null);
         }
     }
 }

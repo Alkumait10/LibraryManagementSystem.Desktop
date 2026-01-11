@@ -45,7 +45,7 @@ namespace LibraryManagementSystem.Presentation
             txtBookID.Text = _BookID.ToString();
             txtTitle.Text = _Book.Title.ToString();
             txtISBN.Text = _Book.ISBN.ToString();
-            dtpPublicationDate.Value = _Book.PublicationDate;
+            txtPublicationDate.Text = _Book.PublicationDate.ToShortDateString();
             txtGenre.Text = _Book.Genre.ToString();
             txtAdditionalDetails.Text = _Book.AdditionalDetails.ToString();
         }

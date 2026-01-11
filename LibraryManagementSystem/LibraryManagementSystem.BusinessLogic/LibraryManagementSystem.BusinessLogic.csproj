@@ -43,6 +43,10 @@
   <ItemGroup>
     <Compile Include="clsBook.cs" />
     <Compile Include="clsBookCopy.cs" />
+    <Compile Include="clsBorrowingRecord.cs" />
+    <Compile Include="clsFine.cs" />
+    <Compile Include="clsReservation.cs" />
+    <Compile Include="clsSettings.cs" />
     <Compile Include="clsUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -34,6 +34,10 @@
             this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.borrowBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.showFinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAddNewUser = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblRecords = new System.Windows.Forms.Label();
@@ -42,6 +46,10 @@
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.lblFilterBy = new System.Windows.Forms.Label();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
+            this.showBorrowingRecordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.showReservationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -72,30 +80,62 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showDetailsToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.deleteToolStripMenuItem});
+            this.deleteToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.borrowBookToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.showFinesToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.showBorrowingRecordsToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.showReservationsToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(165, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(245, 224);
             // 
             // showDetailsToolStripMenuItem
             // 
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.showDetailsToolStripMenuItem.Text = "Show Details";
             this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(207, 6);
+            // 
+            // borrowBookToolStripMenuItem
+            // 
+            this.borrowBookToolStripMenuItem.Name = "borrowBookToolStripMenuItem";
+            this.borrowBookToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.borrowBookToolStripMenuItem.Text = "Borrow Book";
+            this.borrowBookToolStripMenuItem.Click += new System.EventHandler(this.borrowBookToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(207, 6);
+            // 
+            // showFinesToolStripMenuItem
+            // 
+            this.showFinesToolStripMenuItem.Name = "showFinesToolStripMenuItem";
+            this.showFinesToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.showFinesToolStripMenuItem.Text = "Show Fines";
+            this.showFinesToolStripMenuItem.Click += new System.EventHandler(this.showFinesToolStripMenuItem_Click);
             // 
             // btnAddNewUser
             // 
@@ -185,6 +225,30 @@
             this.txtFilterValue.TabIndex = 8;
             this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
             // 
+            // showBorrowingRecordsToolStripMenuItem
+            // 
+            this.showBorrowingRecordsToolStripMenuItem.Name = "showBorrowingRecordsToolStripMenuItem";
+            this.showBorrowingRecordsToolStripMenuItem.Size = new System.Drawing.Size(244, 24);
+            this.showBorrowingRecordsToolStripMenuItem.Text = "Show Borrowing Records";
+            this.showBorrowingRecordsToolStripMenuItem.Click += new System.EventHandler(this.showBorrowingRecordsToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(241, 6);
+            // 
+            // showReservationsToolStripMenuItem
+            // 
+            this.showReservationsToolStripMenuItem.Name = "showReservationsToolStripMenuItem";
+            this.showReservationsToolStripMenuItem.Size = new System.Drawing.Size(244, 24);
+            this.showReservationsToolStripMenuItem.Text = "Show Reservations";
+            this.showReservationsToolStripMenuItem.Click += new System.EventHandler(this.showReservationsToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(241, 6);
+            // 
             // frmListUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -226,6 +290,14 @@
         private System.Windows.Forms.ComboBox cbFilterBy;
         private System.Windows.Forms.Label lblFilterBy;
         private System.Windows.Forms.TextBox txtFilterValue;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem borrowBookToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem showFinesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem showBorrowingRecordsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem showReservationsToolStripMenuItem;
     }
 }
 

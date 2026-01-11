@@ -29,6 +29,8 @@ namespace LibraryManagementSystem.Presentation
             _AllBooks = clsBook.GetAllBooks();
             dgvBooks.DataSource = _AllBooks;
 
+            cbFilterBy.SelectedIndex = 0;
+
             _ConfigureBooksGrid();
 
 

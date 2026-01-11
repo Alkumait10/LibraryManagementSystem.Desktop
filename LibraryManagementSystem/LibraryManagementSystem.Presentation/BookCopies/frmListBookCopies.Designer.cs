@@ -34,6 +34,8 @@
             this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.borrowThisBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
@@ -42,6 +44,7 @@
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.lblRecords = new System.Windows.Forms.Label();
             this.btnAddCopy = new System.Windows.Forms.Button();
+            this.reserveThisCopyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookCopies)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -65,30 +68,46 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showDetailsToolStripMenuItem,
             this.editStatusToolStripMenuItem,
-            this.deleteToolStripMenuItem});
+            this.deleteToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.borrowThisBookToolStripMenuItem,
+            this.reserveThisCopyToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(165, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 158);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // showDetailsToolStripMenuItem
             // 
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.showDetailsToolStripMenuItem.Text = "Show Details";
             this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // editStatusToolStripMenuItem
             // 
             this.editStatusToolStripMenuItem.Name = "editStatusToolStripMenuItem";
-            this.editStatusToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.editStatusToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.editStatusToolStripMenuItem.Text = "Edit Status";
             this.editStatusToolStripMenuItem.Click += new System.EventHandler(this.editStatusToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(207, 6);
+            // 
+            // borrowThisBookToolStripMenuItem
+            // 
+            this.borrowThisBookToolStripMenuItem.Name = "borrowThisBookToolStripMenuItem";
+            this.borrowThisBookToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.borrowThisBookToolStripMenuItem.Text = "Borrow This Book";
+            this.borrowThisBookToolStripMenuItem.Click += new System.EventHandler(this.borrowThisBookToolStripMenuItem_Click);
             // 
             // lblTitle
             // 
@@ -176,6 +195,13 @@
             this.btnAddCopy.UseVisualStyleBackColor = true;
             this.btnAddCopy.Click += new System.EventHandler(this.btnAddCopy_Click);
             // 
+            // reserveThisCopyToolStripMenuItem
+            // 
+            this.reserveThisCopyToolStripMenuItem.Name = "reserveThisCopyToolStripMenuItem";
+            this.reserveThisCopyToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.reserveThisCopyToolStripMenuItem.Text = "Reserve This Copy";
+            this.reserveThisCopyToolStripMenuItem.Click += new System.EventHandler(this.reserveThisCopyToolStripMenuItem_Click);
+            // 
             // frmListBookCopies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -219,5 +245,8 @@
         private System.Windows.Forms.ToolStripMenuItem editStatusToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.Button btnAddCopy;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem borrowThisBookToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reserveThisCopyToolStripMenuItem;
     }
 }
